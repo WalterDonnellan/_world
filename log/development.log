@@ -1,0 +1,28 @@
+
+
+Started GET "/" for ::1 at 2017-05-02 00:46:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+DEPRECATION WARNING: Using #scope without passing a callable object is deprecated. For example `scope :red, where(color: 'red')` should be changed to `scope :red, -> { where(color: 'red') }`. There are numerous gotchas in the former usage and it makes the implementation more complicated and buggy. (If you prefer, you can just define a class method named `self.red`.). (called from <class:Proverb> at /home/vagrant/67272/labs/_world-1/app/models/proverb.rb:11)
+DEPRECATION WARNING: Using #scope without passing a callable object is deprecated. For example `scope :red, where(color: 'red')` should be changed to `scope :red, -> { where(color: 'red') }`. There are numerous gotchas in the former usage and it makes the implementation more complicated and buggy. (If you prefer, you can just define a class method named `self.red`.). (called from <class:Proverb> at /home/vagrant/67272/labs/_world-1/app/models/proverb.rb:12)
+DEPRECATION WARNING: Calling #find(:first) is deprecated. Please call #first directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from get_random_quote at /home/vagrant/67272/labs/_world-1/app/models/proverb.rb:4)
+  [1m[35mProverb Load (9.2ms)[0m  SELECT "proverbs".* FROM "proverbs" ORDER BY Random() LIMIT 1
+  Rendered home/index.html.erb within layouts/application (7.7ms)
+  Rendered partials/_footer.html.erb (8.9ms)
+Completed 200 OK in 463ms (Views: 387.8ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/articles" for ::1 at 2017-05-02 00:46:19 +0000
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (7.5ms)[0m  [1mSELECT "articles".* FROM "articles" ORDER BY title LIMIT 10 OFFSET 0[0m
+  Rendered articles/index.html.erb within layouts/application (13.3ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 243ms (Views: 188.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/articles" for ::1 at 2017-05-02 00:46:30 +0000
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (3.8ms)[0m  SELECT "articles".* FROM "articles" ORDER BY title LIMIT 10 OFFSET 0
+  Rendered articles/index.html.erb within layouts/application (7.1ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 209ms (Views: 204.6ms | ActiveRecord: 3.8ms)
